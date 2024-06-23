@@ -73,3 +73,62 @@ api.py
 45.    app.run(debug=True)
 ```
 
+cli.py
+
+```python
+1. import argparse
+2. import requests
+3. 
+4. def list_devices():
+5.    response = requests.get('http://localhost:5000/devices')
+6.    devices = response.json()
+7.    for device in devices:
+8.        print(f"  {device['id']}: {device['name']} ({device['ip_address']})")
+9. 
+10. def get_device(id):
+11.    response = requests.get(f"http://localhost:5000/devices/{id}")
+12.    device = response.json()
+13.    print(f"Device {id}:")
+14.    print(f"  Name: {device['name']}")
+15.    print(f"  IP Address: {device['ip_address']}")
+16. 
+17. def update_device(id):
+18.    data = {'name': input("Enter new name: "), 'ip_address': input("Enter new IP address: ")}
+19.    response = requests.patch(f"http://localhost:5000/devices/{id}", json=data)
+20.    print(f"Device {id} updated successfully")
+21. 
+22. def create_device():
+23.    data = {'name': input("Enter name: "), 'ip_address': input("Enter IP address: ")}
+24.    response = requests.post('http://localhost:5000/devices', json=data)
+25.    device_id = response.json()['id']
+26.    print(f"Device created successfully with ID {device_id}")
+27. 
+28. def delete_device(id):
+29.    response = requests.delete(f"http://localhost:5000/devices/{id}")
+30.    print(f"Device {id} deleted successfully")
+31. 
+32. def main():
+33.    parser = argparse.ArgumentParser(description="PiNet-Manager CLI")
+34.    parser.add_argument("command", help="Command to execute (list, get, update, create, delete)")
+35.    args = parser.parse_args()
+36. 
+37.    if args.command == "list":
+38.        list_devices()
+39.    elif args.command == "get":
+40.        id = int(input("Enter device ID: "))
+41.        get_device(id)
+42.    elif args.command == "update":
+43.        id = int(input("Enter device ID: "))
+44.        update_device(id)
+45.    elif args.command == "create":
+46.        create_device()
+47.    elif args.command == "delete":
+48.        id = int(input("Enter device ID: "))
+49.        delete_device(id)
+50.    else:
+51.        print("Invalid command")
+52. 
+53. if __name__ == '__main__':
+54.    main()
+```
+
