@@ -1,0 +1,6 @@
+{
+  "tls_version": "TLSv1.3",
+  "cipher_suite": "ECDHE+AESGCM:ECDHE+CHACHA20:DH+AESGCM:DH+CHACHA20",
+  "cert_file": "certs/pi_net_manager.crt",
+  "key_file": "certs/pi_net_manager.key"
+}
