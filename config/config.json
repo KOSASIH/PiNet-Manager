@@ -1,0 +1,19 @@
+{
+  "api": {
+    "host": "0.0.0.0",
+    "port": 5000,
+    "debug": true
+  },
+  "database": {
+    "type": "sqlite",
+    "filename": "pi_net_manager.db"
+  },
+  "logging": {
+    "level": "DEBUG",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  },
+  "security": {
+    "cert_file": "certs/pi_net_manager.crt",
+    "key_file": "certs/pi_net_manager.key"
+  }
+}
