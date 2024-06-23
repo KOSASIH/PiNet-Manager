@@ -15,4 +15,7 @@ To get started, clone the repository and install the dependencies:
 Then, start the server:
 
 ```bash
-1. 
+1. npm start
+```
+
+The server will start on port 3000.
