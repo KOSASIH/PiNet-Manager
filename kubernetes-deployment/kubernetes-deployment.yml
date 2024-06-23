@@ -1,0 +1,32 @@
+# kubernetes-deployment.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pinet-manager
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pinet-manager
+  template:
+    metadata:
+      labels:
+        app: pinet-manager
+    spec:
+      containers:
+        - name: pinet-manager
+          image: pinet-manager:latest
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pinet-manager
+spec:
+  selector:
+    app: pinet-manager
+  ports:
+    - port: 80
+      targetPort: 8080
+  type: LoadBalancer
