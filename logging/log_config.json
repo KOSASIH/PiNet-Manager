@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "formatters": {
+    "default": {
+      "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    }
+  },
+  "handlers": {
+    "console": {
+      "class": "logging.StreamHandler",
+      "formatter": "default"
+    },
+    "file": {
+      "class": "logging.FileHandler",
+      "filename": "pi_net_manager.log",
+      "formatter": "default"
+    }
+  },
+  "loggers": {
+    "pi_net_manager": {
+      "level": "DEBUG",
+      "handlers": ["console", "file"]
+    }
+  }
+}
