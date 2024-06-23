@@ -1,0 +1,20 @@
+---
+name: Compliance as Code
+description: Automate compliance through security services provided by cloud provider
+version: 1.0
+
+services:
+  security:
+    image: pi-net-manager/security-service-bus
+    environment:
+      - CLOUD_PROVIDER=AWS
+      - REGION=us-west-2
+    ports:
+      - "8080:8080"
+
+  cloudwatch:
+    image: amazon/cloudwatch
+    environment:
+      - AWS_REGION=us-west-2
+    ports:
+      - "9090:9090"
