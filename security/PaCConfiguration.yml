@@ -1,0 +1,26 @@
+# This is the technology you want to write a rule for
+licensing:
+  # The four main rules types to do everything you need to do for all things
+  #  compliance
+
+  # Warnings will always occur if the rule applies and continues executing to
+  #  other rules.
+  warnings:
+    ids:
+      - Other
+      - NA
+  # Ignores are run next so if an ignored rule is hit that matches the level,
+  #  it will be skipped
+  ignores:
+    ids:
+      - MIT License
+  # Conditions will only trigger and raise an error when an exact match is hit
+  conditions:
+    ids:
+      - GPL-2.0
+    names:
+      - tunnel-agent
+
+  # The simplest and ultimate rule which checks the severity of the alert and
+  #  reports an issue if the level matches or higher (see PaC Levels for more info)
+  level: error
