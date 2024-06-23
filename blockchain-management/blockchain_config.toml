@@ -1,0 +1,13 @@
+# blockchain_config.toml
+[ blockchain ]
+name = "PiNet Blockchain"
+network_id = 12345
+chain_id = 12345
+
+[ node ]
+address = "0x0000000000000000000000000000000000000000"
+port = 8545
+
+[ database ]
+type = "sqlite"
+filename = "blockchain.db"
