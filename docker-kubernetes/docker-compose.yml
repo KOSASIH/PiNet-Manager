@@ -1,0 +1,57 @@
+# docker-compose.yml
+version: '3'
+services:
+  node-manager:
+    build:.
+    ports:
+      - "8080:8080"
+    depends_on:
+      - blockchain-manager
+    environment:
+      - NODE_ENV=development
+  blockchain-manager:
+    build:.
+    ports:
+      - "8081:8081"
+    depends_on:
+      - wallet-manager
+    environment:
+      - NODE_ENV=development
+  wallet-manager:
+    build:.
+    ports:
+      - "8082:8082"
+    depends_on:
+      - network-communicator
+    environment:
+      - NODE_ENV=development
+  network-communicator:
+    build:.
+    ports:
+      - "8083:8083"
+    depends_on:
+      - security-manager
+    environment:
+      - NODE_ENV=development
+  security-manager:
+    build:.
+    ports:
+      - "8084:8084"
+    depends_on:
+      - scalability-manager
+    environment:
+      - NODE_ENV=development
+  scalability-manager:
+    build:.
+    ports:
+      - "8085:8085"
+    depends_on:
+      - ui-manager
+    environment:
+      - NODE_ENV=development
+  ui-manager:
+    build:.
+    ports:
+      - "8086:8086"
+    environment:
+      - NODE_ENV=development
