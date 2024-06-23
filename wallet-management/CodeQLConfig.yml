@@ -1,0 +1,7 @@
+packs:
+  - scope/pack1
+  - scope/pack2@1.2.3
+  - scope/pack3@~3.2.1
+  - scope/pack4:path/to/queries
+  - scope/pack5:path/to/single/query.ql
+  - scope/pack6:path/to/suite.qls
