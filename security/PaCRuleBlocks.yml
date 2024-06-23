@@ -1,0 +1,18 @@
+codescanning:
+  conditions:
+    # When the `ids` of the technologies/tool alert matches any one of the ID's in
+    #  the list specified, the rule will the triggered and report the alert.
+    ids:
+      # In this example case, the CodeQL rule ID below will always be reported if
+      #  present event if the severity is low or even note.
+      - js/sql-injection
+
+    # `names` allows you to specify the names of alerts or packages.
+    names:
+      - "Missing rate limiting"
+
+    # The `imports` allows you to supplement your existing data with a list
+    #  from a file on the system.
+    imports:
+      ids: "path/to/ids/supplement/file.txt"
+      names: "path/to/names/supplement/file.txt"
