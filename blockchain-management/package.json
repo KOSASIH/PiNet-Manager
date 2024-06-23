@@ -1,0 +1,14 @@
+{
+  "name": "blockchain-management",
+  "version": "1.0.0",
+  "description": "Advanced blockchain management system",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.1",
+    "web3": "^1.3.4"
+  }
+}
