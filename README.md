@@ -45,7 +45,7 @@ PiNet-Manager is licensed under the Apache License 2.0. See the LICENSE file for
 PiNet-Manager is built on top of several open-source projects, including:
 
 - Go: https://golang.org/
--;Node.js: https://nodejs.org/
+- Node.js: https://nodejs.org/
 - Vue.js: https://vuejs.org/
 - Topology View: https://github.com/pi-net-manager/topology-view
 
