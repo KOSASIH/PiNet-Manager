@@ -132,3 +132,30 @@ cli.py
 54.    main()
 ```
 
+device.py
+
+```python
+1. class Device:
+2.    def __init__(self, id, name, ip_address):
+3.        self.id = id
+4.        self.name = name
+5.        self.ip_address = ip_address
+6. 
+7.    def __repr__(self):
+8.        return f"<Device: {self.name} ({self.ip_address})>"
+```
+
+utils.py
+
+```python
+1. import ipaddress
+2. 
+3. def validate_ip_address(ip_address):
+4.    try:
+5.        ipaddress.IPv4Address(ip_address)
+6.        return True
+7.    except ValueError:
+8.        return False
+```
+
+These docs/code files provide a comprehensive overview of the PiNet-Manager project, including its features, usage, and implementation details.
