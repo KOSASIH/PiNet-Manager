@@ -1,0 +1,11 @@
+# node_config.yaml
+nodes:
+  - name: node1
+    ip_address: 192.168.1.100
+    status: online
+  - name: node2
+    ip_address: 192.168.1.101
+    status: offline
+  - name: node3
+    ip_address: 192.168.1.102
+    status: online
