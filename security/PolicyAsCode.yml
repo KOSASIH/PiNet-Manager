@@ -1,0 +1,10 @@
+# Compliance
+- name: Advance Security Policy as Code
+  uses: advanced-security/policy-as-code@v2.7.3
+  with:
+    # The owner/repo of where the policy is stored
+    policy: GeekMasher/security-queries
+    # The local (within the workspace) or repository
+    policy-path: policies/default.yml
+    # The branch you want to target
+    policy-branch: main
